@@ -1,0 +1,188 @@
+@font-face {
+    font-family: karrik_reg;
+    src: url(fonts/Karrik-Regular.woff);
+}
+
+@font-face {
+    font-family: karrik_it;
+    src: url(fonts/Karrik-Italic.woff);
+}
+
+body {
+    cursor: crosshair;
+    overflow: hidden;
+    margin: 0;
+    font-family: karrik_reg;
+    font-size: 12pt;
+    line-height: 14.4pt;
+    color: white;
+}
+
+.cursor {
+    width: 40px;
+    transition: 1s;
+    z-index: 100;
+}
+
+#background {
+    background-image: url("assets/main/bg.png");
+    background-color: #4176b9;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#island {
+    background-image: url("assets/main/island.png");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    width: 100%;
+    opacity: 1;
+    transform: scale(0.7);
+    bottom: -10%;
+    transition: 1s;
+    z-index: 2;
+}
+
+#island.shrink {
+    transform: scale(0.0);
+    transition: 1s;
+}
+
+#all_nuages {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nuage {
+    position: fixed;
+    width: 20vh;
+    padding: 5px;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.nuage:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+#empty {
+    position: fixed;
+    transform: scale(1.5);
+    top: 30px;
+    left: 30px;
+}
+
+#about {
+    position: fixed;
+    top: 50px;
+    right: 500px;
+}
+
+#download {
+    position: fixed;
+    top: 10px;
+    right: 400px;
+}
+
+#share {
+    position: fixed;
+    top: 60px;
+    right: 300px;
+}
+
+#islands {
+    position: fixed;
+    top: 10px;
+    right: 150px;
+}
+
+.page {
+    display: grid;
+    z-index: 10;
+    position: fixed;
+    height: 100vh;
+    padding: 30vh 50px 10vh 50px;
+    top: 100%;
+}
+
+.page.slideIn {
+    transition: 1s;
+    top: 0;
+}
+
+.page.slideOut {
+    transition: 1s;
+    top: -100%;
+}
+
+.page.visible {
+    display: grid;
+}
+
+#about_page {
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#about_page #col3 {
+    grid-column: 3/5;
+}
+
+iframe {
+    width: 100%;
+    height: 56.25%;
+}
+
+#share_page {
+    display: block;
+    width: calc(100% - 100px);
+    text-align: center;
+}
+
+#email {
+    color: inherit;
+    text-decoration: underline;
+    transition: ease;
+}
+
+#email:hover {
+    color: inherit;
+    transition: ease;
+    font-family: karrik_it;
+}
+
+#download_page {
+    text-align: center;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: calc(100% - 100px);
+}
+
+#islands_page {
+    text-align: left;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: calc(100% - 100px);
+}
+
+.page .nuage {
+    position: relative;
+    width: 20vh;
+    padding: 5px;
+    opacity: 1;
+    transition: 0.5s;
+}
